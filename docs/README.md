@@ -1,40 +1,41 @@
-## SpliderApi
+# SpliderApi
 
-基于Node 的一个网络爬虫 API接口
-包括前端开发日报、知乎日报、前端top框架排行、妹纸福利、搞笑视频、各类视频新闻资讯 热点详情接口数
+基于Node 的一个网络爬虫 API接口 包括前端开发日报、知乎日报、前端top框架排行、妹纸福利、搞笑视频、各类视频新闻资讯 热点详情接口数
 
-<a href="https://ecitlm.github.io/SpliderApi/#/">查看文档</a>
+[查看文档](https://ecitlm.github.io/SpliderApi/#/)
 
-### 环境要求
+## 环境要求
+
 需要 NodeJS+express
 
-### 安装
-``` shell
+## 安装
+
+```shell
 $ git clone https://github.com/ecitlm/SpliderApi.git
 $ npm install
 
 ### 运行
 $ node app.js
 ```
-服务器启动默认端口为3000 、启动之后就可以开启了接口服务了.
 
+服务器启动默认端口为3000 、启动之后就可以开启了接口服务了.
 
 [menu]
 
-### 1.前端开发日报接口
+## 1.前端开发日报接口
+
 说明:获取前端开发博客日报列表、推荐列表、单日文章列表数据
 
-#### 1.1 最新前10天日报列表
-**必选参数:**
-无
+### 1.1 最新前10天日报列表
 
-**接口地址:**
-`/daily_list`
+**必选参数:** 无
 
-**调用例子:**
-`http://localhost:3000/daily_list`
+**接口地址:** `/daily_list`
+
+**调用例子:** `http://localhost:3000/daily_list`
 
 返回数据(每次返回是10条数据,这里就不全部列出来了)如下图:
+
 ```javascript
 {
     "msg": "success",
@@ -58,17 +59,16 @@ $ node app.js
 }
 ```
 
-#### 1.2 内容推荐列表
-**必选参数:**
-无
+### 1.2 内容推荐列表
 
-**接口地址:**
-`/recommend_list`
+**必选参数:** 无
 
-**调用例子:**
-`http://localhost:3000/recommend_list`
+**接口地址:** `/recommend_list`
+
+**调用例子:** `http://localhost:3000/recommend_list`
 
 返回数据(每次返回10条数据，由于长度就展示2条看)如下JSON:
+
 ```javascript
 {
     "msg": "success",
@@ -92,17 +92,16 @@ $ node app.js
 }
 ```
 
-#### 1.3 单日日报内容
-**必选参数:**
-`date`: 日期 20170522
+### 1.3 单日日报内容
 
-**接口地址:**
-`//one_day_list?date=20170521`
+**必选参数:** `date`: 日期 20170522
 
-**调用例子:**
-`http://localhost:3000/one_day_list?date=20170521`
+**接口地址:** `//one_day_list?date=20170521`
+
+**调用例子:** `http://localhost:3000/one_day_list?date=20170521`
 
 返回数据(由于长度就展示2条看)如下JSON:
+
 ```javascript
 {
     "msg": "success",
@@ -124,24 +123,22 @@ $ node app.js
     },
     "code": 1
 }
-
 ```
 
+## 2.框架 top 排行榜
 
-### 2.框架 top 排行榜
 说明:获取前前端框架排名,我们可以看看web前端世界的框架排名
 
-#### 2.1 获取前端框架top 20排名
-**必选参数:**
-`无` : 
+### 2.1 获取前端框架top 20排名
 
-**接口地址:**
-`/web_frame`
+**必选参数:** `无` :
 
-**调用例子:**
-`http://localhost:3000/web_frame`
+**接口地址:** `/web_frame`
+
+**调用例子:** `http://localhost:3000/web_frame`
 
 返回数据(返回20条 由于长度就展示2条看)如下JSON:
+
 ```javascript
 {
     "msg" : "success",
@@ -165,40 +162,36 @@ $ node app.js
     }
 ```
 
+## 3.知乎日报
 
-### 3.知乎日报
 说明:获取每日知乎日报数据、日报详情数据
 
-#### 3.1 每日知乎日报数据
-**必选参数:**
-`无参数` : 
+### 3.1 每日知乎日报数据
 
-**接口地址:**
-`/zhihu_news`
+**必选参数:** `无参数` :
 
-**调用例子:**
-`http://localhost:3000/zhihu_news`
+**接口地址:** `/zhihu_news`
+
+**调用例子:** `http://localhost:3000/zhihu_news`
 
 返回数据(返回条看)如下JSON:
-```javascript
 
+```javascript
 ```
 
+### 3.2 日报详情
 
-#### 3.2 日报详情
-**必选参数:**
-`id` : 3977867
+**必选参数:** `id` : 3977867
 
-**接口地址:**
-`/zhihu_news_detail?id=3977867`
+**接口地址:** `/zhihu_news_detail?id=3977867`
 
-**调用例子:**
-`http://localhost:3000/zhihu_news_detail?id=3977867`
+**调用例子:** `http://localhost:3000/zhihu_news_detail?id=3977867`
 
 返回数据(返回条看)如下JSON:
+
 ```javascript
 {
-    "body": "<div class=\"main-wrap content-wrap\">\n<div class=\"headline\">\n\n<div class=\"img-place-holder\"></div>\n\n\n\n</div>\n\n<div class=\"content-inner\">\n\n\n\n\n<div class=\"question\">\n<h2 class=\"question-title\">北京大学 2010 级古生物专业为何只有一个学生？</h2>\n\n<div class=\"answer\">\n\n<div class=\"meta\">\n<img class=\"avatar\" src=\"http://pic1.zhimg.com/3df2a664c_is.jpg\">\n<span class=\"author\">周诗培</span>\n</div>\n\n<div class=\"content\">\n<p>看到个自己能答的问题了。</p>\r\n<p>首先有人所说的什么北大为一个人开设专业体现情怀什么的，没你们想象的那样高尚。真实情况是，这个专业就录了一个人，就这么简单。</p>\r\n<p>古生物专业属于北大元培学院。元培学院与常见的数学院物理学院中文系之内的院系不同，元培学院并不是一个按照专业划分的学院，而是一个住宿学院。学院里的学生可以自由选择其他院系的专业，例如信科，光华等，同时在选课上比专业院系的同学有更大的自由。除了选择其他院系的专业，元培学生还可以选择本院的三个专业：古生物，政经哲和外语外史。</p>\r\n<p>元培学院自己的专业的特点是，只有元培的学生才能选；课程综合性强，从不同的院系的课程中选取不同的课程组成自己的培养计划。古生物专业就是建立在地空学院，生科院等课程上的。</p>\r\n<p>元培学院的学生在大二上分流，确定自己的专业。这时候如果有人选择古生物，那么这一届古生物就有学生。学生按照培养方案选择课程，然后到所在院系上课。学校并不需要为这个学生专门开一门课程。</p>\r\n<p>报考北京大学元培学院的话，会有北大唯一的本科生男女混住宿舍楼，有不同专业的同学同居一寝的混宿制度。有点不好就是，别人问你学什么专业的时候，你会非常纠结&hellip;&hellip;</p>\r\n<p>利益相关，我是元培学院的学生。</p>\n</div>\n</div>\n\n\n<div class=\"view-more\"><a href=\"http://www.zhihu.com/question/24170880\">查看知乎讨论<span class=\"js-question-holder\"></span></a></div>\n\n</div>\n\n\n</div>\n</div>",
+    "body": "<div class=\"main-wrap content-wrap\">\n<div class=\"headline\">\n\n<div class=\"img-place-holder\"></div>\n\n\n\n</div>\n\n<div class=\"content-inner\">\n\n\n\n\n<div class=\"question\">\n<h2 class=\"question-title\">北京大学 2010 级古生物专业为何只有一个学生？</h2>\n\n<div class=\"answer\">\n\n<div class=\"meta\">\n<img class=\"avatar\" src=\"http://pic1.zhimg.com/3df2a664c_is.jpg\">\n<span class=\"author\">周诗培</span>\n</div>\n\n<div class=\"content\">\n<p>看到个自己能答的问题了。</p>\r\n<p>首先有人所说的什么北大为一个人开设专业体现情怀什么的，没你们想象的那样高尚。真实情况是，这个专业就录了一个人，就这么简单。</p>\r\n<p>古生物专业属于北大元培学院。元培学院与常见的数学院物理学院中文系之内的院系不同，元培学院并不是一个按照专业划分的学院，而是一个住宿学院。学院里的学生可以自由选择其他院系的专业，例如信科，光华等，同时在选课上比专业院系的同学有更大的自由。除了选择其他院系的专业，元培学生还可以选择本院的三个专业：古生物，政经哲和外语外史。</p>\r\n<p>元培学院自己的专业的特点是，只有元培的学生才能选；课程综合性强，从不同的院系的课程中选取不同的课程组成自己的培养计划。古生物专业就是建立在地空学院，生科院等课程上的。</p>\r\n<p>元培学院的学生在大二上分流，确定自己的专业。这时候如果有人选择古生物，那么这一届古生物就有学生。学生按照培养方案选择课程，然后到所在院系上课。学校并不需要为这个学生专门开一门课程。</p>\r\n<p>报考北京大学元培学院的话，会有北大唯一的本科生男女混住宿舍楼，有不同专业的同学同居一寝的混宿制度。有点不好就是，别人问你学什么专业的时候，你会非常纠结……</p>\r\n<p>利益相关，我是元培学院的学生。</p>\n</div>\n</div>\n\n\n<div class=\"view-more\"><a href=\"http://www.zhihu.com/question/24170880\">查看知乎讨论<span class=\"js-question-holder\"></span></a></div>\n\n</div>\n\n\n</div>\n</div>",
     "image_source": "Yestone.com 版权图片库",
     "title": "不是北大为一个人开专业，而是这个专业只招了一个人",
     "image": "https://pic4.zhimg.com/33adaf08d180ae6fcfac5faa8db7afe7.jpg",
@@ -218,61 +211,48 @@ $ node app.js
 }
 ```
 
-### 4.头条新闻数据
-说明:获取新闻头条分类新闻、新闻详情 
+## 4.头条新闻数据
 
-#### 4.1 新闻头条新闻列表
-**必选参数:**
-`type` : 新闻类型 <br />   0 热点新闻 1 社会新闻 2 娱乐新闻 3体育新闻 4美文 5科技 6财经 7 时尚
-  <table>
-<tr>
-	<td>type</td>
-	<td>0</td>
-	<td>1</td>
-	<td>2</td>
-	<td>3</td>
-	<td>4</td>
-    <td>5</td>
-    <td>6</td>
-    <td>7</td>
-</tr>
-<tr>
-	<td>名称</td>
-	<td>热点</td>
-	<td>社会</td>
-	<td>娱乐</td>
-	<td>体育</td>
-	<td>美文</td>
-    <td>科技</td>
-    <td>财经</td>
-    <td>时尚</td>
-</tr>
-</table>
+说明:获取新闻头条分类新闻、新闻详情
+
+### 4.1 新闻头条新闻列表
+
+**必选参数:** `type` : 新闻类型<br>
+0 热点新闻 1 社会新闻 2 娱乐新闻 3体育新闻 4美文 5科技 6财经 7 时尚
 
 
 
-**接口地址:**
-`/news_list?type=1`
 
-**调用例子:**
-`http://localhost:3000/news_list?type=1`
+
+
+
+
+
+type | 0  | 1  | 2  | 3  | 4  | 5  | 6  | 7
+---- | -- | -- | -- | -- | -- | -- | -- | --
+名称   | 热点 | 社会 | 娱乐 | 体育 | 美文 | 科技 | 财经 | 时尚
+
+
+
+**接口地址:** `/news_list?type=1`
+
+**调用例子:** `http://localhost:3000/news_list?type=1`
 
 返回数据(由于长度就展示2条看)如下JSON:
-```javascript
 
+```javascript
 ```
 
-#### 4.2 新闻详情数据
-**必选参数:**
-`item_id` : 新闻类型 <br /> 
+### 4.2 新闻详情数据
 
-**接口地址:**
-`/news_detail?item_id=item_id`
+**必选参数:** `item_id` : 新闻类型<br>
 
-**调用例子:**
-`http://localhost:3000/news_detail?item_id=64246032347483345941`
+**接口地址:** `/news_detail?item_id=item_id`
+
+**调用例子:** `http://localhost:3000/news_detail?item_id=64246032347483345941`
 
 返回数据(由于长度就展示2条看)如下JSON:
+
 ```javascript
 {
     "_ck": {},
@@ -295,63 +275,48 @@ $ node app.js
     },
     "success": true
 }
-
 ```
 
+### 4.3 视频数据
 
-#### 4.3   视频数据
-**必选参数:**
-`type` : 类型 <br /> 0搞笑视频  1美女视频  2体育视频  3 新闻现场 4涨姿势  5猎奇  6 黑科技 默认搞笑视频
-<br /> 
- `page` : 分页 如:10/20/30 
-  <table>
-<tr>
-	<td>type</td>
-	<td>0</td>
-	<td>1</td>
-	<td>2</td>
-	<td>3</td>
-	<td>4</td>
-    <td>5</td>
-    <td>6</td>
-</tr>
-<tr>
-	<td>名称</td>
-    <td>搞笑</td>
-	<td>美女</td>
-	<td>体育</td>
-	<td>新闻现场</td>
-	<td>涨姿势</td>
-	<td>猎奇</td>
-    <td>黑科技</td>
-</tr>
-</table>
+**必选参数:** `type` : 类型<br>
+0搞笑视频 1美女视频 2体育视频 3 新闻现场 4涨姿势 5猎奇 6 黑科技 默认搞笑视频<br>
+`page` : 分页 如:10/20/30
 
 
 
-**接口地址:**
-`/video_list?type=0&page=10`
 
-**调用例子:**
-`http://localhost:3000/video_list?type=0&page=10`
+
+
+
+
+
+type | 0  | 1  | 2  | 3    | 4   | 5  | 6
+---- | -- | -- | -- | ---- | --- | -- | ---
+名称   | 搞笑 | 美女 | 体育 | 新闻现场 | 涨姿势 | 猎奇 | 黑科技
+
+
+
+**接口地址:** `/video_list?type=0&page=10`
+
+**调用例子:** `http://localhost:3000/video_list?type=0&page=10`
 
 返回数据(由于长度就展示2条看)如下JSON:
-```javascript
 
+```javascript
 ```
 
-### 5 段子
+## 5 段子
+
 说明:获取笑话段子搞笑图片数据
 
-#### 5.1   笑话段子
-**必选参数:**
-`无` 
+### 5.1 笑话段子
 
-**接口地址:**
-`/joke`
+**必选参数:** `无`
 
-**调用例子:**
-`http://localhost:3000/joke`
+**接口地址:** `/joke`
+
+**调用例子:** `http://localhost:3000/joke`
 
 ```javascript
 {
@@ -482,79 +447,67 @@ $ node app.js
 }
 ```
 
-#### 5.2   搞笑图片
-**必选参数:**
-`无` 
+### 5.2 搞笑图片
 
-**接口地址:**
-`/joke_pic`
+**必选参数:** `无`
 
-**调用例子:**
-`http://localhost:3000/joke_pic`
+**接口地址:** `/joke_pic`
+
+**调用例子:** `http://localhost:3000/joke_pic`
 
 ```javascript
-
 ```
 
+## 花瓣APi 接口
 
-### 花瓣APi 接口
 说明:获取美女分类图片集合
 
-#### X.1 妹纸美女类型分类
-**必选参数:**
-`page` : 分页数第几页 <br/>
-**必选参数:**
- `catid`  分类id
-  <table>
-<tr>
-	<td>catid</td>
-	<td>34</td>
-	<td>35</td>
-	<td>36</td>
-	<td>37</td>
-	<td>38</td>
-	<td>39</td>	
-	<td>40</td>
+### X.1 妹纸美女类型分类
 
-</tr>
-<tr>
-	<td>名称</td>
-	<td>大胸妹</td>
-	<td>小清新</td>
-	<td>文艺范</td>
-	<td>性感妹</td>
-	<td>大长腿</td>
-	<td>黑丝袜</td>
-	<td>小翘臀</td>
-</tr>
-</table>
+**必选参数:** `page` : 分页数第几页<br>
+**必选参数:** `catid` 分类id
 
-**接口地址:**
-`/huaban?page=page&catid=catid`
 
-**调用例子:**
-`http://localhost:3000/huaban?page=1&catid=34`
+
+
+
+
+
+
+
+
+
+
+
+catid | 34  | 35  | 36  | 37  | 38  | 39  | 40
+----- | --- | --- | --- | --- | --- | --- | ---
+名称    | 大胸妹 | 小清新 | 文艺范 | 性感妹 | 大长腿 | 黑丝袜 | 小翘臀
+
+
+
+**接口地址:** `/huaban?page=page&catid=catid`
+
+**调用例子:** `http://localhost:3000/huaban?page=1&catid=34`
 
 返回数据(由于长度就展示2条看)如下JSON:
-```javascript
 
+```javascript
 ```
 
+## X.妹纸图片福利接口
 
-### X.妹纸图片福利接口
 说明:获取美女分类、分类下图片列表、图片列表数据、和某个妹纸图片集合
 
-#### X.1 妹纸美女类型分类
-**必选参数:**
-`无` :
+### X.1 妹纸美女类型分类
 
-**接口地址:**
-`/classify`
+**必选参数:** `无` :
 
-**调用例子:**
-`http://localhost:3000/classify`
+**接口地址:** `/classify`
+
+**调用例子:** `http://localhost:3000/classify`
 
 返回数据(由于长度就展示2条看)如下JSON:
+
 ```javascript
 {
     "msg": "success",
@@ -572,17 +525,16 @@ $ node app.js
 }
 ```
 
-#### X.2 妹纸分类下 图片列表接口
-**必选参数:**
-`tags` : 分类 如： qingchun
+### X.2 妹纸分类下 图片列表接口
 
-**接口地址:**
-`/classify_tags_list?tags=luoli`
+**必选参数:** `tags` : 分类 如： qingchun
 
-**调用例子:**
-`http://localhost:3000/classify_tags_list?tags=luoli`
+**接口地址:** `/classify_tags_list?tags=luoli`
+
+**调用例子:** `http://localhost:3000/classify_tags_list?tags=luoli`
 
 返回数据(由于长度就展示2条看)如下JSON:
+
 ```javascript
 {
     "msg": "success",
@@ -604,17 +556,16 @@ $ node app.js
 }
 ```
 
-#### X.3 图片详情列表
-**必选参数:**
-`id` :  列表下图片集合id  5525
+### X.3 图片详情列表
 
-**接口地址:**
-`/img_view?id=5525`
+**必选参数:** `id` : 列表下图片集合id 5525
 
-**调用例子:**
-`http://localhost:3000/img_view?id=5525`
+**接口地址:** `/img_view?id=5525`
+
+**调用例子:** `http://localhost:3000/img_view?id=5525`
 
 返回数据如下JSON:
+
 ```javascript
 {
     "msg": "success",
@@ -628,6 +579,3 @@ $ node app.js
     "code": 1
 }
 ```
-
-
-
