@@ -40,7 +40,7 @@ const music_list = require('./routers/music/music_list');
 const joke_pic = require('./routers/joke/joke_pic');
 const joke = require('./routers/joke/joke');
 const post_test = require('./routers/untils/post_test');
-const cnode = require('./routers/cnode');
+const cnode = require('./routers/cnode_list');
 
 app.use('/', index);
 //图片列表
@@ -75,7 +75,7 @@ app.use('/joke_pic', joke_pic);
 app.use('/joke', joke);
 
 // cnode社区
-app.use('/cnode', cnode)
+app.use('/cnode_list', cnode_list)
 
 app.use('/post_test', post_test);
 app.use(router);
