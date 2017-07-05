@@ -40,7 +40,7 @@ const music_list = require('./routers/music/music_list');
 const joke_pic = require('./routers/joke/joke_pic');
 const joke = require('./routers/joke/joke');
 const post_test = require('./routers/untils/post_test');
-const cnode = require('./routers/cnode_list');
+const cnode_list = require('./routers/cnode/cnode_list');
 
 app.use('/', index);
 //图片列表
